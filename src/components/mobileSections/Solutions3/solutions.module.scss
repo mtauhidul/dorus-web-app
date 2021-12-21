@@ -1,0 +1,145 @@
+.solutions {
+	margin-top: 100px;
+	background-color: #281c51;
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 85%;
+		padding: 100px 0px;
+
+
+		.left {
+			flex: 6;
+			max-width: 100% !important;
+
+			h1 {
+				font-size: 38px;
+				font-weight: 700;
+				color: #29c9f3;
+				letter-spacing: 1px;
+			}
+
+			.top {
+				margin: 20px 0;
+
+				p {
+					font-size: 1rem;
+					max-width: 80%;
+					color: #fff;
+				}
+			}
+
+			.bottom {
+				padding: 30px 0px;
+
+				p {
+					font-weight: 500;
+					font-size: 1rem;
+				}
+
+				.btn {
+					border: none;
+					outline: none;
+					font-size: 18px;
+					font-weight: bold;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+					padding: 10px 30px;
+					border-radius: 8px;
+					color: white;
+
+				}
+
+				.btn1 {
+					border: 3px solid #00c0b4;
+					background: transparent;
+					color: #00c0b4;
+
+					&:hover {
+						background: linear-gradient(90.08deg, #00c0b4 0.1%, #29c9f3 99.97%);
+						box-shadow: 0px 20px 25px 0px rgba(38, 200, 238, 0.25);
+						color: #fff;
+					}
+				}
+
+				.btn2 {
+					border: 3px solid transparent;
+					background: linear-gradient(90.08deg, #00c0b4 0.1%, #29c9f3 99.97%);
+					box-shadow: 0px 20px 25px 0px rgba(38, 200, 238, 0.25);
+
+					&:hover {
+						border: 3px solid #00c0b4;
+						background: transparent;
+						color: #00c0b4;
+					}
+				}
+
+			}
+		}
+
+		.right {
+			flex: 5;
+			margin-left: 50px;
+			text-align: center;
+			background-image: url(../../../resources/mobile/Group55.svg);
+			background-repeat: no-repeat;
+			background-position: top left;
+			padding: 10px;
+
+
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+@media screen and(max-width:992px) {
+	.solutions {
+		.wrapper {
+			max-width: 100%;
+			flex-direction: column;
+
+			.left {
+				flex: 12;
+				text-align: center;
+				margin-top: 30px;
+				padding: 10px;
+
+				h1 {
+					font-size: 34px;
+				}
+			}
+
+			.right {
+				flex: 12;
+				margin-top: 20px;
+				margin-left: 0;
+			}
+
+			.top {
+				margin: 20px 0;
+
+				p {
+					font-size: 1rem;
+					max-width: 100% !important;
+				}
+			}
+
+			.bottom {
+				padding: 20px;
+				border-radius: 20px;
+				max-width: 100% !important;
+				margin-top: 30px;
+				margin-bottom: 20px;
+
+				p {
+					font-weight: 500;
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
