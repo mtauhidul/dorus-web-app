@@ -3,106 +3,11 @@
 	clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
 	margin-top: -5px;
 
-	.wrapper {
-		.wrapperTop {
-			display: flex;
-			padding-top: 50px;
-			max-width: 85%;
-			margin: 0 auto;
-
-			.left {
-				flex: 3;
-				color: white;
-
-				.list {
-					text-transform: uppercase;
-					letter-spacing: 1px;
-					line-height: 2;
-					padding: 0;
-					margin: 0;
-					cursor: pointer;
-					font-size: 24px;
-					border-left: 4px solid transparent;
-					margin-left: 10px;
-				}
-
-				.activeList {
-					display: inline-block;
-					margin-left: -20px;
-					color: #29c9f3;
-
-					&::before {
-						content: "";
-						border-left: 4px solid #29c9f3;
-						// font-size: 40px;
-						margin-right: 26px;
-					}
-				}
-			}
-
-			.right {
-				flex: 9;
-				display: flex;
-				flex-wrap: wrap;
-				align-items: center;
-				justify-content: space-between;
-				margin-left: 50px;
-
-				.cardCustom {
-					width: 14rem;
-					height: 320px;
-					border-radius: 16px;
-					background-color: white;
-					margin: 0 auto;
-					margin-bottom: 30px;
-					text-align: center;
-					cursor: pointer;
-
-					&:hover {
-						&::after {
-							position: absolute;
-							top: -5px;
-							bottom: -5px;
-							left: -5px;
-							right: -5px;
-							background: linear-gradient(#00c0b4, #29c9f3);
-							content: "";
-							z-index: -1;
-							border-radius: 16px;
-							box-shadow: 0px 20px 50px rgba(38, 200, 238, 0.5);
-						}
-					}
-
-					.img {
-						max-width: 100px;
-						margin-left: auto;
-						margin-right: auto;
-						margin-top: 30px;
-					}
-
-					h4 {
-						letter-spacing: 2px;
-						color: #1c164b;
-						font-weight: 700;
-						margin-top: 30px;
-						text-transform: uppercase;
-						bottom: 0px;
-						position: absolute;
-						left: 50%;
-						transform: translate(-50%, -50%);
-						font-size: 20px;
-					}
-				}
-			}
-		}
-	}
-
 	.wrapperBottom {
 		height: 500px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		max-width: 85%;
 		margin: 0 auto;
 		padding-top: 100px;
 
@@ -113,14 +18,6 @@
 			justify-content: center;
 			align-items: center;
 
-			p {
-				color: #29c9f3;
-				font-size: 1.2rem;
-				text-transform: uppercase;
-				line-height: 22px;
-				letter-spacing: 3px;
-			}
-
 			h1 {
 				color: rgba(41, 201, 243, 1);
 				font-weight: bold;
@@ -128,24 +25,43 @@
 				line-height: 68px;
 				text-align: center;
 			}
+			.forDesktop {
+				max-width: 85%;
+			}
 
-			button {
-				outline: none;
-				font-size: 18px;
-				font-weight: bold;
-				letter-spacing: 2px;
-				text-transform: uppercase;
-				padding: 10px 30px;
-				border-radius: 40px;
-				color: white;
+			.forMobile {
+				display: none;
+			}
+		}
+	}
+}
 
-				border: 3px solid transparent;
-				background: linear-gradient(90.08deg, #00c0b4 0.1%, #29c9f3 99.97%);
-				box-shadow: 0px 20px 25px 0px rgba(38, 200, 238, 0.25);
+// @mixin mobile($width) {
+// 	@media (max-width: #{$width}) {
+// 		@content;
+// 	}
+// }
 
-				&:hover {
-					border: 3px solid #00c0b4;
-					background: transparent;
+@mixin mobile($side) {
+	.startBuild {
+		.wrapperBottom {
+			.bottom {
+				.forMobile {
+					.mobileBottom {
+						.card {
+							@if $side == "left" {
+								.left {
+									@content;
+								}
+							}
+
+							@if $side == "right" {
+								.right {
+									@content;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -156,34 +72,10 @@
 	.startBuild {
 		clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
 
-		.wrapper {
-			.wrapperTop {
-				display: flex;
-				flex-direction: column;
-				max-width: 100% !important;
-
-				.left {
-					.activeList {
-						width: 100%;
-						margin-left: 0px;
-
-						&::before {
-							content: "";
-							margin-right: 0px;
-							border-left: none;
-						}
-					}
-				}
-
-				.right {
-					margin-left: 0;
-					margin-top: 30px;
-				}
-			}
-		}
-
 		.wrapperBottom {
 			max-width: 100% !important;
+			min-height: 1200px;
+			padding-top: 20px;
 
 			.bottom {
 				text-align: center;
@@ -192,65 +84,342 @@
 					margin: 20px 0;
 				}
 
-				button {
-					outline: none;
-					font-size: 14px;
-					font-weight: bold;
-					letter-spacing: 2px;
-					text-transform: uppercase;
-					border-radius: 40px;
-					color: white;
+				.forDesktop {
+					display: none;
+				}
+
+				.forMobile {
+					display: block;
+					text-align: center;
+
+					.mobileTop {
+						.person {
+							display: block;
+							margin: 0 auto;
+							margin-bottom: -40px;
+						}
+
+						img {
+							display: block;
+							margin: 0 auto;
+						}
+
+						button {
+							display: block;
+							margin: 0 auto;
+						}
+					}
+
+					.mobileBottom {
+						.card {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							color: #fff;
+
+							.left {
+								flex: 5.5;
+
+								.div1,
+								.div2 {
+									border: 2px solid #29c9f3;
+									text-align: center;
+									margin: 20px 25px 20px 10px;
+									border-radius: 30px;
+									padding: 10px;
+									position: relative;
+
+									&::after {
+										content: ">";
+										position: absolute;
+										top: -20%;
+										right: -39px;
+										font-size: 5rem;
+										font-weight: 100;
+										color: #29c9f3;
+									}
+
+									p {
+										margin: 0;
+
+										&::after {
+											content: "";
+											position: absolute;
+											top: 30%;
+											right: -28px;
+											border-width: 15px;
+											border-style: solid;
+											transform: rotate(270deg);
+											border-color: #1c164b transparent transparent transparent;
+										}
+									}
+								}
+							}
+
+							.center {
+								text-align: center;
+							}
+							.right {
+								flex: 5.5;
+								height: 100%;
+								display: flex;
+								align-items: flex-end;
+
+								.div3 {
+									border: 2px solid #29c9f3;
+									text-align: center;
+									margin: 280px 0 20px 20px;
+									border-radius: 30px;
+									padding: 10px;
+									position: relative;
+
+									&::after {
+										content: "<";
+										position: absolute;
+										bottom: -85%;
+										left: -35px;
+										font-size: 5rem;
+										font-weight: 100;
+										color: #29c9f3;
+									}
+
+									p {
+										margin: 0;
+										&::after {
+											content: "";
+											position: absolute;
+											top: 18%;
+											left: -25px;
+											border-width: 14px;
+											border-style: solid;
+											transform: rotate(270deg);
+											border-color: transparent transparent #1c164b transparent;
+										}
+									}
+								}
+							}
+						}
+
+						.kyc {
+							background: linear-gradient(
+								109.76deg,
+								#316eff 0%,
+								#d4008c 98.13%
+							);
+							box-shadow: 0px 10px 30px rgba(213, 0, 140, 0.4);
+							border-radius: 25px;
+							border: none;
+							text-transform: none;
+						}
+					}
+
+					button {
+						outline: none;
+						font-size: 18px;
+						font-weight: bold;
+						letter-spacing: 2px;
+						text-transform: uppercase;
+						padding: 10px 30px;
+						border-radius: 40px;
+						color: white;
+						border: 3px solid transparent;
+						background: linear-gradient(90.08deg, #00c0b4 0.1%, #29c9f3 99.97%);
+						box-shadow: 0px 20px 25px 0px rgba(38, 200, 238, 0.25);
+
+						&:hover {
+							border: 3px solid #00c0b4;
+							background: transparent;
+						}
+					}
 				}
 			}
 		}
+	}
+}
 
-		.cardCustom {
-			width: 42vw !important;
-			max-width: 200px !important;
-			height: 30vh !important;
-			border-radius: 8px !important;
-			background-color: white;
-			margin: 0 auto;
-			margin-bottom: 14px !important;
-			text-align: center;
-			display: flex;
-			flex-direction: column;
-			align-items: space-between;
-			justify-content: center;
+@media screen and (min-width: 600px) {
+	@include mobile("left") {
+		.div1 {
+			&::after {
+				top: -35%;
+			}
 
-			&:hover {
+			p {
 				&::after {
-					position: absolute;
-					top: -5px;
-					bottom: -5px;
-					left: -5px;
-					right: -5px;
-					background: linear-gradient(#00c0b4, #29c9f3);
-					content: "";
-					z-index: -1;
-					border-radius: 40px;
-					box-shadow: 0px 20px 50px rgba(38, 200, 238, 0.5);
+					top: 30%;
 				}
 			}
+		}
+	}
+}
 
-			.img {
-				max-width: 80% !important;
-				margin-left: auto;
-				margin-right: auto;
-				margin-top: 20px !important;
+@media screen and (min-width: 798px) {
+	@include mobile("left") {
+		.div2 {
+			&::after {
+				top: -35%;
 			}
 
-			h4 {
-				letter-spacing: 0px !important;
-				color: #1c164b;
-				font-weight: 700 !important;
-				margin-top: 10px !important;
-				text-transform: uppercase;
-				bottom: 0px;
-				position: absolute;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				font-size: 14px !important;
+			p {
+				&::after {
+					top: 30%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 930px) {
+	@include mobile("left") {
+		.div1 {
+			&::after {
+				top: -43%;
+				right: -38px;
+			}
+
+			p {
+				&::after {
+					top: 15px;
+					right: -29px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 615px) {
+	@include mobile("left") {
+		.div2 {
+			&::after {
+				top: -5%;
+			}
+
+			p {
+				&::after {
+					top: 34.5%;
+					right: -29px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	@include mobile("left") {
+		.div1 {
+			&::after {
+				top: -20%;
+			}
+
+			p {
+				&::after {
+					top: 29%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 489px) {
+	@include mobile("left") {
+		.div2 {
+			&::after {
+				top: 2%;
+			}
+
+			p {
+				&::after {
+					top: 34.5%;
+					right: -29px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 453px) {
+	@include mobile("left") {
+		.div2 {
+			&::after {
+				top: 7%;
+			}
+
+			p {
+				&::after {
+					top: 35%;
+					right: -29px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 474px) {
+	@include mobile("left") {
+		.div1 {
+			&::after {
+				top: -10%;
+			}
+
+			p {
+				&::after {
+					top: 30%;
+					right: -30px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 431px) {
+	@include mobile("right") {
+		.div3 {
+			margin-left: 25px;
+
+			&::after {
+				top: -40%;
+				left: -38px;
+			}
+
+			p {
+				&::after {
+					top: 30%;
+					left: -27.5px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 421px) {
+	@include mobile("left") {
+		.div1 {
+			&::after {
+				top: -3.5%;
+			}
+
+			p {
+				&::after {
+					top: 29%;
+					right: -30px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 387px) {
+	@include mobile("left") {
+		.div2 {
+			&::after {
+				top: 10.5%;
+			}
+
+			p {
+				&::after {
+					top: 35%;
+					right: -29px;
+				}
 			}
 		}
 	}
