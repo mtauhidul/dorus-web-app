@@ -12,12 +12,34 @@
 			font-size: 40px;
 			line-height: 68px;
 			letter-spacing: 1px;
-			color: #29c9f3;
-			margin-bottom: -100px;
+			color: #041337;
 		}
 
 		.forDesktop {
 			display: block;
+
+			.forDesktopWrapper {
+				background-image: url("../../../resources/mobile/mobileBackground.svg");
+				background-position: center;
+				background-repeat: no-repeat;
+				height: 550px;
+
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				div {
+					flex: 4;
+				}
+
+				.desktop_center {
+					text-align: center;
+					img {
+						width: 100%;
+						z-index: 999;
+					}
+				}
+			}
 		}
 
 		.forMobile {
@@ -26,7 +48,7 @@
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
 	.DoesIt {
 		.wrapper {
 			max-width: 100% !important;
@@ -42,31 +64,33 @@
 			.forMobile {
 				display: block;
 
-				.number {
+				.mobileTop {
+					background-image: url("../../../resources/mobile/mobileBackground.svg");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
 					text-align: center;
 
-					span {
-						display: block;
-						color: #00c0b4;
-						font-size: 10px;
-						font-weight: 800;
+					img {
+						width: 300px;
 					}
+				}
 
-					.num {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						text-align: center;
-						margin: 0 auto;
-						width: 30px;
-						height: 30px;
-						color: white;
-						margin: 0 auto;
-						border-radius: 50%;
-						font-weight: 700;
-						padding: 20px;
-						font-size: 1.5rem;
-						background: linear-gradient(90.08deg, #00c0b4 0.1%, #29c9f3 99.97%);
+				.timelineContainer {
+					margin-top: -80px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 330px) {
+	.DoesIt {
+		.wrapper {
+			.forMobile {
+				.mobileTop {
+					img {
+						width: 100%;
 					}
 				}
 			}
