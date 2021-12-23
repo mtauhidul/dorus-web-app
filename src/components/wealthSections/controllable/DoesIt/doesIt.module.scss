@@ -1,0 +1,99 @@
+.DoesIt {
+	margin-bottom: 100px;
+
+	.wrapper {
+		max-width: 85%;
+
+		h1 {
+			letter-spacing: 1px;
+			color: rgba(41, 201, 243, 1);
+			font-weight: bold;
+			font-size: 40px;
+			line-height: 68px;
+			text-align: center;
+			padding: 50px 0;
+			margin: 0;
+		}
+
+		.forDesktop {
+			display: block;
+
+			.forDesktopWrapper {
+				background-image: url("../../../../resources/mobile/mobileBackground.svg");
+				background-position: center;
+				background-repeat: no-repeat;
+				height: 550px;
+
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				div {
+					flex: 4;
+				}
+
+				.desktop_center {
+					text-align: center;
+					img {
+						width: 100%;
+						z-index: 999;
+					}
+				}
+			}
+		}
+
+		.forMobile {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.DoesIt {
+		.wrapper {
+			max-width: 100% !important;
+
+			h1 {
+				margin-bottom: 0;
+			}
+
+			.forDesktop {
+				display: none;
+			}
+
+			.forMobile {
+				display: block;
+
+				.mobileTop {
+					background-image: url("../../../../resources/mobile/mobileBackground.svg");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+					text-align: center;
+
+					img {
+						width: 300px;
+					}
+				}
+
+				.timelineContainer {
+					margin-top: -80px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 330px) {
+	.DoesIt {
+		.wrapper {
+			.forMobile {
+				.mobileTop {
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
