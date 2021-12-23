@@ -17,15 +17,12 @@ const Partners = () => {
 									<h4>BACK-OFFICE SOLUTIONS</h4>
 									<div className={styles.text}>
 										<p>
-											{" "}
 											<span></span> Tasks and tickets Management Systems
 										</p>
 										<p>
-											{" "}
 											<span></span> Leads & Clients Management Systems
 										</p>
 										<p>
-											{" "}
 											<span></span> Finance and accounting modules
 										</p>
 									</div>

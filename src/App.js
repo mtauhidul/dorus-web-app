@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Crm from "./views/Crm";
 import Home from "./views/Home";
 import MobileApp from "./views/MobileApp";
+import OpenApi from "./views/OpenApi";
 import Wealth from "./views/Wealth";
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
 				</Route>{" "}
 				<Route path="/wealth">
 					<Wealth />
+				</Route>
+				<Route path="/open-api">
+					<OpenApi />
 				</Route>
 			</Switch>
 		</Router>

@@ -1,0 +1,26 @@
+.rowContainer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 5px 0;
+	padding: 5px 0;
+	border-bottom: 1px solid;
+
+	font-size: 1rem;
+
+	.first {
+		flex: 4;
+	}
+
+	.second {
+		flex: 4;
+	}
+
+	.third {
+		flex: 2;
+	}
+
+	.fourth {
+		flex: 2;
+	}
+}
