@@ -1,0 +1,53 @@
+.Solutions1 {
+	background: white;
+	padding: 100px 0;
+
+	.wrapper {
+		max-width: 85%;
+		.body {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.left {
+				flex: 7;
+				h1 {
+					color: #281c51;
+					font-size: 3rem;
+					font-weight: 700;
+				}
+
+				p {
+					max-width: 70%;
+					color: black;
+					font-size: 1.2rem;
+				}
+			}
+
+			.right {
+				flex: 5;
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.Solutions1 {
+		.wrapper {
+			.body {
+				flex-direction: column;
+				text-align: center;
+
+				.left {
+					p {
+						max-width: 100%;
+						margin: 20px 0;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+.Table1 {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	margin-bottom: 30px;
+	color: white;
+	border-radius: 30px;
+
+	.left {
+		flex: 2;
+		margin-top: 10px;
+		font-weight: 700;
+		font-size: 1rem;
+		text-transform: uppercase;
+	}
+
+	.right {
+		flex: 10;
+	}
+}
