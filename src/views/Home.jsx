@@ -7,7 +7,7 @@ import Partners from '../components/sections/Partners/Partners';
 import Solutions from '../components/sections/Solutions/Solutions';
 import StartBuild from '../components/sections/StartBuild/StartBuild';
 
-const Home = () => {
+const Home = ({ data }) => {
   return (
     <div>
       <Fade top>
@@ -26,7 +26,7 @@ const Home = () => {
         <Partners />
       </Fade>
       <Fade bottom>
-        <Blog />
+        <Blog cardData={data} />
       </Fade>
       <Footer />
     </div>

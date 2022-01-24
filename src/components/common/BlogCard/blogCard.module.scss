@@ -30,10 +30,15 @@
 			font-size: 0.8rem;
 		}
 
-		h4 {
+		a {
 			font-size: 1.4rem;
 			color: #16c5d6;
 			font-weight: 700;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
 		}
 
 		.text {

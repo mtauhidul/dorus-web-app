@@ -1,5 +1,5 @@
 .hero {
-	background-image: url("../../../resources/open/banner.svg");
+
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -21,19 +21,21 @@
 		.text {
 			margin-top: 100px;
 			color: white;
+			max-width: 700px;
 
 			h3 {
 				font-weight: 400;
-				font-size: 40px;
-				line-height: 59px;
+				font-size: 22px;
+				line-height: 36px;
+				letter-spacing: 1px;
 			}
 
 			h1 {
 				font-weight: 800;
 				text-transform: uppercase;
-				letter-spacing: 3px;
-				font-size: 60px;
-				line-height: 78px;
+				letter-spacing: 5px;
+				font-size: 48px;
+				line-height: 64px;
 				margin-top: 20px;
 			}
 
