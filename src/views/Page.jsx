@@ -22,7 +22,7 @@ const Page = () => {
       console.log(response.data.message);
     };
     getBlogsList();
-  }, []);
+  }, [link]);
   console.log(data);
   return (
     <div style={{ background: '#fbfbf8' }}>

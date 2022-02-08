@@ -5,8 +5,6 @@ import image3 from '../../../resources/svg/Group 31.svg';
 import image4 from '../../../resources/svg/Group 32.svg';
 import image5 from '../../../resources/svg/Group 33.svg';
 import image6 from '../../../resources/svg/Group 34.svg';
-// import image7 from "../../../resources/svg/Group 35.svg";
-import Timeline from '../../common/timeline/Timeline';
 import styles from './doesIt.module.scss';
 
 const DoesIt = ({ data }) => {
@@ -58,7 +56,7 @@ const DoesIt = ({ data }) => {
       className={styles.DoesIt}>
       <div className={styles.wrapper + ' container'}>
         <h1>{data?.sectionTitle}</h1>
-        <div className={styles.forDesktop}>
+        {/* <div className={styles.forDesktop}>
           {data?.asset ? (
             <img
               style={{
@@ -87,7 +85,7 @@ const DoesIt = ({ data }) => {
           {arr.map((item, index) => (
             <Timeline data={{ ...item, number: index + 2 }} />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
