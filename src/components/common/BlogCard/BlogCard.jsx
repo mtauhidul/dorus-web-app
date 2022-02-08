@@ -11,7 +11,7 @@ const BlogCard = (props) => {
       <img src={blog_pic_url} alt='' />
       <div className={styles.body}>
         <p className={styles.date}>{published_at}</p>
-        <Link to={`pages/${page_url}`}>{title.slice(0, 18)}</Link>
+        <Link to={`pages/${page_url}`}>{title}</Link>
         <p className={styles.text}>{description.slice(0, 111)}.</p>
       </div>
     </div>
