@@ -39,11 +39,9 @@ const Page = () => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <br />
         <h2>
           <Link to='/'>{data?.content?.sections[6]?.content.sectionTitle}</Link>
         </h2>
-        <br />
         <img
           style={{
             maxWidth: '35%',
@@ -54,9 +52,6 @@ const Page = () => {
           alt=''
         />
       </div>
-      <br />
-      <br />
-      <br />
       <Footer />
     </div>
   );
