@@ -15,7 +15,6 @@ const Solutions2 = ({ data }) => {
           <div className={styles.top}>
             <p>{data?.sectionDescription}</p>
           </div>
-          <div className={styles.bottom}></div>
         </div>
         <div className={styles.right}>
           <img src={data?.asset} alt='' />

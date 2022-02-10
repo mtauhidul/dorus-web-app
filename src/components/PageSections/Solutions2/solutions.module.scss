@@ -1,5 +1,4 @@
 .solutions {
-	background-color: white;
 
 
 	.wrapper {
@@ -51,6 +50,8 @@
 
 @media screen and(max-width:992px) {
 	.solutions {
+		padding-top: 20px;
+
 		.wrapper {
 			max-width: 100%;
 			flex-direction: column;

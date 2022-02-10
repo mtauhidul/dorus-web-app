@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import Banner from '../components/PageSections/Banner/Banner';
 import DoesIt from '../components/PageSections/DoesIt/DoesIt';
 import Footer from '../components/PageSections/Footer/Footer';
 import Hero from '../components/PageSections/Hero/Hero';
@@ -32,26 +33,7 @@ const Page = () => {
       <Solutions2 data={data?.content?.sections[3]?.content} />
       <Solutions data={data?.content?.sections[4]?.content} />
       <Solutions2 data={data?.content?.sections[5]?.content} />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <h2>
-          <Link to='/'>{data?.content?.sections[6]?.content.sectionTitle}</Link>
-        </h2>
-        <img
-          style={{
-            maxWidth: '35%',
-            minWidth: '200px',
-            borderRadius: '8px',
-          }}
-          src={data?.content?.sections[6]?.content.asset}
-          alt=''
-        />
-      </div>
+      <Banner data={data?.content?.sections[6]?.content} />
       <Footer />
     </div>
   );
